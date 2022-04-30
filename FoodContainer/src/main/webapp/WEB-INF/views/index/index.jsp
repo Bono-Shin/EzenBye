@@ -35,7 +35,7 @@
     </nav>
 
     <!-- 섹션 -->
-    <section class="mt-1">
+    <section>
         <div class="row">
 
             <!-- 왼쪽 사이드메뉴 -->
@@ -234,7 +234,7 @@
 										<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 popular d-flex justify-content-center">
 											<div class="card" style="width: 18rem;">
 											<a href = "<%=request.getContextPath()%>/recipeview.do?recipe_index=${recipeList.recipe_index}">
-											  <img src="<%=request.getContextPath()%>/resources/img/recipe/${recipeList.thumbnail_image}" class="card-img-top" alt="${recipeList.thumbnail_image}">
+											  <img src="<%=request.getContextPath()%>/resources/img/recipe/${recipeList.thumbnail_image}" class="card-img-top recipeImg" alt="${recipeList.thumbnail_image}">
 											  <img src="<%=request.getContextPath()%>/resources/img/금메달.png" class="img-fluid medal" alt="1등">
 											  <div class="card-body">
 											    <p class="card-text">
@@ -258,7 +258,7 @@
 										<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 popular d-flex justify-content-center">
 											<div class="card" style="width: 18rem;">
 											<a href = "<%=request.getContextPath()%>/recipeview.do?recipe_index=${recipeList.recipe_index}">
-											  <img src="<%=request.getContextPath()%>/resources/img/recipe/${recipeList.thumbnail_image}" class="card-img-top" alt="${recipeList.thumbnail_image}">
+											  <img src="<%=request.getContextPath()%>/resources/img/recipe/${recipeList.thumbnail_image}" class="card-img-top recipeImg" alt="${recipeList.thumbnail_image}">
 											  <img src="<%=request.getContextPath()%>/resources/img/은메달.png" class="img-fluid medal" alt="2등">
 											  <div class="card-body">
 											    <p class="card-text">
@@ -281,7 +281,7 @@
 										<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 popular d-flex justify-content-center">
 											<div class="card" style="width: 18rem;">
 											<a href = "<%=request.getContextPath()%>/recipeview.do?recipe_index=${recipeList.recipe_index}">
-											  <img src="<%=request.getContextPath()%>/resources/img/recipe/${recipeList.thumbnail_image}" class="card-img-top" alt="${recipeList.thumbnail_image}">
+											  <img src="<%=request.getContextPath()%>/resources/img/recipe/${recipeList.thumbnail_image}" class="card-img-top recipeImg" alt="${recipeList.thumbnail_image}">
 											  <img src="<%=request.getContextPath()%>/resources/img/동메달.png" class="img-fluid medal" alt="3등">
 											  <div class="card-body">
 											    <p class="card-text">
@@ -315,7 +315,7 @@
 							<c:forEach items="${popularList}" var="popularList" begin="${ran}" end="${ran+3}" varStatus="status">
 								<div class="cardM">
 								<a href="productView.do?product_index=${popularList.product_index}" onclick="productCookie(this)">
-									<div style = "width:150px; height:180px; text-align:center;">
+									<div class="imgAreaM">
 										<img src="<%=request.getContextPath()%>/resources/img/${popularList.brand}/${popularList.middleSort }/${popularList.thumbnail_image}" class="img-fluid" id="cardMimg" alt="${popularList.product_name }">
 										<c:if test="${popularList.inventory == 0 }">
 									  	  	<img src="<%=request.getContextPath()%>/resources/img/매진.png" class="card-img-top indexSoldM">
@@ -415,7 +415,7 @@
 						<p class="fs-5 my-2 fw-bold">베스트 레시피</p>
 						<hr>
 						<c:forEach items="${recipeList}" var="recipeList">
-						<c:if test="${recipeList.best_rank < 4}">
+						<c:if test="${recipeList.best_rank < 4 && recipeList.best_rank != ''}">
 						<div class="recipeCardM">
 							<div class="recipeMDiv">
 								<c:if test="${recipeList.best_rank == 1}">
@@ -429,7 +429,7 @@
 											<div>[닉네임 : ${MemberList.nickname}]</div>
 										</c:if>
 									</c:forEach>
-									<div>제목 : ${recipeList.title}</div>
+									<div class="recipTitleM">제목 : ${recipeList.title}</div>
 									<div>조회 : ${recipeList.hit}</div>
 									<div>추천 : ${recipeList.thumb}</div>
 								</div>
@@ -446,7 +446,7 @@
 											<div>[닉네임 : ${MemberList.nickname}]</div>
 										</c:if>
 									</c:forEach>
-									<div>제목 : ${recipeList.title}</div>
+									<div class="recipTitleM">제목 : ${recipeList.title}</div>
 									<div>조회 : ${recipeList.hit}</div>
 									<div>추천 : ${recipeList.thumb}</div>
 								</div>
@@ -463,7 +463,7 @@
 											<div>[닉네임 : ${MemberList.nickname}]</div>
 										</c:if>
 									</c:forEach>
-									<div>제목 : ${recipeList.title}</div>
+									<div class="recipTitleM">제목 : ${recipeList.title}</div>
 									<div>조회 : ${recipeList.hit}</div>
 									<div>추천 : ${recipeList.thumb}</div>
 								</div>

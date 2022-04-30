@@ -80,7 +80,7 @@
 					
 						<div class="row hd">
 						
-							<div class="col-sm-8 col-xs-3 col-12">
+							<div class="col-sm-7 col-xs-3 col-12">
 								<h3>
 								<c:if test="${read.best_rank==1 }">
 								<img src="<%=request.getContextPath()%>/resources/img/금메달.png" id="bestimg">
@@ -96,12 +96,12 @@
 							</div>
 
 
-							<div class="col-sm-4 col-12 hddiv">작성자: ${read.name} | 조회수 : (${read.hit}) | 댓글(${read.reply_index})</div>
+							<div class="col-sm-5 col-12 hddiv">작성자: ${read.name}&nbsp;|&nbsp;추천수: (${read.thumb}) | 조회수 : (${read.hit}) | 댓글(${read.reply_index})</div>
 						</div>
 
 						<div class="row body">
 
-							<div class="col-sm-8 col-12">
+							<div class="col-xl-8 col-lg-6 col-12">
 								<table>
 							
 									<tr>
@@ -221,9 +221,9 @@
 							<div class="col-3 col-sm-2 col-md-2 col-lg-2 replyview" name="replyname"id="replyname">
 								<p>${re.name}</p>
 							</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-6 wday" name="replydate" id="replydate">${re.reply_date}
+							<div class="col-lg-2 col-md-2 col-sm-2 col-5 wday" name="replydate" id="replydate">${re.reply_date}
 							</div>
-							<div class="col-md-2 col-sm-2 col-3 report"  name="replybtn" id="replybtn">
+							<div class="col-md-4 col-sm-2 col-4 p-0 report"  name="replybtn" id="replybtn">
 								<!-- 회원 -->
 								<c:if test="${member.member_index==re.member_index}">
 								<span>

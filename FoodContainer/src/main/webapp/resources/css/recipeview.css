@@ -62,7 +62,8 @@ textarea{
 border: 1px solid black;
 width: 300px;
 height: 300px;
-margin-top: 7%;
+margin-top: 7%;	
+
 text-align: center;
 }
 .thumnail img{
@@ -295,17 +296,48 @@ height: 100%;
     .replycontent{
        
        font-size:13px;
-       margin-top:-7%;
+       margin-top:-5%;
        padding-bottom:4%;
        
     }
+}
+/*모바일 수정 삭제버튼*/
+@media screen and (max-width:380px){
+   input#deletebtn{
+     width: 50px;
+     height: 30px;
+     font-size: 12px;
+     vertical-align: middle;
+     
+    }    
+}
+@media screen and (max-width:380px){
+   input#modifybtn{
+     width: 50px;
+     height: 30px;
+     font-size: 12px;
+     
+    }    
 }
 @media screen and (max-width:380px){
    ::placeholder{
       font-size:0.8em;
     }    
 }
-
+@media screen and (max-width:380px){
+   .hddiv{
+      font-size:0.8em;
+      text-align: inherit;
+    }    
+}
+/*1024 작성자 추천 조회수 댓글*/
+@media screen and (max-width:1024px){
+   .hddiv{
+   padding-top:3%;
+      font-size:0.72em;
+      text-align: inherit;
+    }    
+}
 .fa-thumbs-up:hover{
 	cursor: pointer;
 	color: rgba(49, 133, 211, 0.89);

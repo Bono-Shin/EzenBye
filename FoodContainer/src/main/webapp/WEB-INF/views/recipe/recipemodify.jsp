@@ -115,16 +115,16 @@
 
 								<!-- 대표이미지 문구 -->
 								<div
-									class="col-5 col-md-3 col-lg-2 d-flex justify-content-center">
+									class="col-12 col-md-3 col-lg-3 d-flex justify-content-center">
 									<span class="infoTitle p-1"><span class="text-danger">*</span>대표이미지</span>
 								</div>
 
-								<div class="col-11 col-md-6 col-lg-8 d-flex mt-2 inputImageFile">
+								<div class="col-8 col-md-6 col-lg-7 d-flex mt-2 inputImageFile">
 									<!-- 파일 등록 -->
 									<input class="form-control check" name="tumnailImage" type="file" accept="image/png" onchange="previewImage(event,this);previewImage2(event,this);">
 								</div>
 								<div
-									class="col-7 col-md-3 col-lg-2 d-flex justify-content-end imagePreview">
+									class="col-4 col-md-3 col-lg-2 d-flex justify-content-end imagePreview">
 									<!-- 이미지 미리보기 -->
 									<button type="button" class="btn btn-secondary previewButton" data-bs-toggle="modal" data-bs-target="#tumnailImageModal">미리보기</button>
 								</div>
@@ -165,7 +165,8 @@
 								</div>
 								<div class="px-1 col-sm-3 col-4 sel2" id="selbox">
 									<select name="product_index2" id="sel" class="select1">		
-											<option value="${read.product_index2}">${read.product_name2}</option>							
+											<option value="${read.product_index2}">${read.product_name2}</option>	
+											<option value="">없음</option>						
 										<c:forEach items="${productListAll}" var="productListAll" varStatus="status">
 										<option value="${productListAll.product_index}">[${productListAll.brand}]${productListAll.product_name}</option>
 										</c:forEach>
@@ -174,6 +175,7 @@
 								<div class="px-1 col-sm-3 col-4 sel3" id="selbox">
 									<select name="product_index3" id="sel" class="select1">
 										<option value="${read.product_index3}">${read.product_name3}</option>
+										<option value="">없음</option>
 										<c:forEach items="${productListAll}" var="productListAll" varStatus="status">
 										<option value="${productListAll.product_index}">[${productListAll.brand}]${productListAll.product_name}</option>
 										</c:forEach>

@@ -92,9 +92,13 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public int insertMember(MemberVO vo) throws Exception {
+	public void insertMember(MemberVO vo) throws Exception {
 		vo.setPw(PasswordEncoder.encode(vo.getPw()));
-		return memberDao.insertMember(vo);
+		 memberDao.insertMember(vo);
+		 //추천인포인트
+		 if(vo.getRecommender()!=null && !vo.getRecommender().equals("")) {
+			 memberDao.updateRecom(vo);
+		 }
 		
 	}
 	
